@@ -1,6 +1,8 @@
 # 4. Создайте функцию генератор чисел Фибоначчи
 # https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8
 
+
+# рекурсия
 def fibonacci(number: int):
     if number <= 1:
         return number
@@ -17,3 +19,17 @@ def fib_list(number: int):
 
 print(fibonacci(10))
 print(fib_list(10))
+
+
+# генератор
+
+def fib_gen(max_value):
+    a, b = 0, 1
+    while a <= max_value:
+        yield a
+        a, b = b, a + b
+
+
+a = fib_gen(60)
+
+print(*a)
